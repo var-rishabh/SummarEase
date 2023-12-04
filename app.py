@@ -17,9 +17,18 @@ def main():
 def summarize():
     if request.method == "POST":
         text = request.form.get("text")
-        return render_template("summarize.html", summary=summarizedText(text))
+        summarizeType = request.form.get("type")
+        lines = request.form.get("lines")
+        return render_template(
+            "summarize.html", summary=summarizedText(text, summarizeType, lines)
+        )
     else:
         return render_template("summarize.html")
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html"), 404
 
 
 if __name__ == "__main__":
