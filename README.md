@@ -1,1 +1,2 @@
-# text-summarization
+# SummarEase
+### text-summarization
