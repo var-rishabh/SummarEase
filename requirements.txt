@@ -1,0 +1,19 @@
+nltk
+numpy
+networkx
+newspaper3k
+textblob
+rogue
+pandas
+scikit-learn
+matplotlib
+tqdm
+
+
+
+"""
+Run one time only:
+"""
+
+nltk.download('punkt')
+nltk.download('stopwords')
