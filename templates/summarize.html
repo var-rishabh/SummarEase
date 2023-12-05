@@ -76,7 +76,13 @@
                 <div class="col-lg">
                     <div class="summarize-item second-summarize">
                         <h4>Your Summary</h4>
+                        {% if summary %}
                         <p>{{summary}}</p>
+                        {% else %}
+                        <div class="waiting_image">
+                            <img src="../static/images/waiting.svg" alt="waiting">
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
