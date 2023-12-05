@@ -594,17 +594,18 @@ Team
 }
 
 .postcard {
-    flex-wrap: wrap;
     display: flex;
+    flex-direction: row;
     box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
     border-radius: 10px;
     margin: 0;
     overflow: hidden;
     position: relative;
     color: #fff;
-    min-width: 800px;
-    max-width: 800px;
-    height: 80%;
+    min-width: 650px;
+    max-width: 650px;
+    min-height: 400px;
+    max-height: 400px;
 }
 
 .postcard.light {
@@ -689,16 +690,6 @@ Team
 }
 
 @media screen and (min-width: 769px) {
-    .team_cards {
-        flex-direction: column;
-    }
-
-    .postcard {
-        flex-wrap: inherit;
-        min-width: 600px;
-        max-width: 600px;
-    }
-
     .postcard .postcard__title {
         font-size: 2rem;
     }
@@ -752,10 +743,6 @@ Team
 }
 
 @media screen and (min-width: 1024px) {
-    .team_cards {
-        flex-direction: column;
-    }
-
     .postcard__text {
         padding: 2rem 3.5rem;
     }
@@ -928,6 +915,16 @@ responsive
 @media (max-width: 992px) {
     .header-area {
         background-color: #fff;
+    }
+
+    .team_cards {
+        flex-direction: column;
+    }
+
+    .postcard {
+        flex-wrap: inherit;
+        min-width: 600px;
+        max-width: 600px;
     }
 
     .main-banner:after {
