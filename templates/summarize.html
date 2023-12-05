@@ -30,11 +30,11 @@
         </nav>
     </header>
 
-    <div id="features" class="services section">
+    <div class="services section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="section-heading">
                         <h4><em>Summarize</em> your text!</h4>
                         <img src="../static/images/heading-line-dec.png" alt="">
                     </div>
@@ -42,40 +42,46 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row summarize_card">
                 <div class="col-lg">
-                    <div class="service-item first-service">
-                        <div class="icon"></div>
-                        <h4>Extractive</h4>
-                        <p>
-                            Extractive summarization involves selecting and merging existing sentences or phrases from
-                            the source text to create a summary, rather than generating new content.
-                        </p>
-                    </div>
+                    <form action="summarize" method="post">
+                        <div class="summarize-item first-summarize">
+                            <div class="first_part">
+                                <div class="first_part-head">
+                                    <label for="type">Select Type</label>
+                                    <select name="type" id="type">
+                                        <option value="0">Text</option>
+                                        <option value="1">Link</option>
+                                    </select>
+                                </div>
+                                <div class="first_part-head">
+                                    <label for="length">Enter Length</label>
+                                    <select name="length" id="length">
+                                        <option value="5">Short</option>
+                                        <option value="10">Long</option>
+                                        <option value="20">Very-Long</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="second_part">
+                                <label for="text">Enter Your Text</label>
+                                <textarea name="text" type="text" for="text"></textarea>
+                            </div>
+                            <div class="gradient-button">
+                                <button type="submit">Summarize</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="col-lg">
-                    <div class="service-item second-service">
-                        <div class="icon"></div>
-                        <h4>Abstractive</h4>
-                        <p>
-                            Abstractive summarization condenses text by interpreting and rephrasing content, aiming for
-                            concise summaries similar to human-written ones.
-                        </p>
+                    <div class="summarize-item second-summarize">
+                        <h4>Your Summary</h4>
+                        <p>{{summary}}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <form action="summarize" method="post">
-        <textarea type="text" name="text" id="text" placeholder="Enter text here"></textarea>
-        <button type="submit">Submit</button>
-    </form>
-    <p>
-        Summarized text:
-    <h1> {{ summary }} </h1>
-    </p>
 </body>
 
 </html>
