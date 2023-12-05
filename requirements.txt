@@ -10,11 +10,5 @@ matplotlib
 tqdm
 flask
 
-
-
-"""
-Run one time only:
-"""
-
 nltk.download('punkt')
 nltk.download('stopwords')
