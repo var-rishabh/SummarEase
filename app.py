@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 
 # Define a helper function to generate summarized text
-def summarizedText(text, type=1, lines=10):
-    return get_summarized_text(text, type=type, lines=lines)
+def summarizedText(text, summarizeType=1, length=10):
+    return get_summarized_text(text, summarizeType=summarizeType, length=length)
 
 
 # Define the main route of the web application
@@ -22,25 +22,21 @@ def main():
 # Define a route for text summarization
 @app.route("/summarize", methods=["GET", "POST"])
 def summarize():
-    # Check if the request method is POST (form submission)
     if request.method == "POST":
-        # Get the input text, summarization type, and lines from the form
         text = request.form.get("text")
-        summarizeType = request.form.get("type")
-        lines = request.form.get("lines")
-        # Render the summarize HTML template with the summarized text
+        summarizeType = int(request.form.get("type"))
+        length = int(request.form.get("length"))
+
         return render_template(
-            "summarize.html", summary=summarizedText(text, summarizeType, lines)
+            "summarize.html", summary=summarizedText(text, summarizeType, length)
         )
     else:
-        # If the request method is GET, render the summarize HTML template without summarization
         return render_template("summarize.html")
 
 
 # Define a custom error handler for 404 errors
 @app.errorhandler(404)
 def page_not_found(e):
-    # Render a custom 404.html template when a page is not found
     return render_template("404.html"), 404
 
 
