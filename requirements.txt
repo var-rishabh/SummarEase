@@ -9,6 +9,3 @@ scikit-learn
 matplotlib
 tqdm
 flask
-
-nltk.download('punkt')
-nltk.download('stopwords')

@@ -5,8 +5,8 @@ from nltk.cluster.util import cosine_distance
 import numpy as np
 import networkx as nx
 
-# nltk.download('punkt')
-# nltk.download('stopwords')
+nltk.download("punkt")
+nltk.download("stopwords")
 
 
 def preprocess_text(text):
