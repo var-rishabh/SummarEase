@@ -595,7 +595,7 @@ Team
 
 .postcard {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
     border-radius: 10px;
     margin: 0;
@@ -605,7 +605,7 @@ Team
     min-width: 650px;
     max-width: 650px;
     min-height: 400px;
-    max-height: 400px;
+    max-height: 500px;
 }
 
 .postcard.light {
@@ -636,7 +636,8 @@ Team
 }
 
 .postcard .postcard__img {
-    max-height: 180px;
+    height: 400px;
+    max-height: 400px;
     width: 100%;
     object-fit: cover;
     position: relative;
